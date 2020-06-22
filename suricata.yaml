@@ -6,9 +6,9 @@ vars:
 
   # Holds the address group vars that would be passed in a Signature.
   address-groups:
-    HOME_NET: "[192.168.0.0/16]" ## set your CID IP LAN
+    HOME_NET: "[192.168.50.0/24]" ## set your CID IP LAN
     EXTERNAL_NET: "any"
-    DNS_SERVERS: "[IP_DNS]"
+    DNS_SERVERS: "[192.168.50.1]"
     SMTP_SERVERS: "$HOME_NET"
     HTTP_SERVERS: "$HOME_NET"
     SQL_SERVERS: "$HOME_NET"
@@ -41,7 +41,7 @@ host-mode: auto
 
 # Linux high speed capture support
 af-packet:
- - interface:  ## set your wan interface
+ - interface: eth0 ## set your wan interface
 copy-mode: ips
 copy-iface: br0
 defrag: yes
